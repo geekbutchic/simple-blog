@@ -7,8 +7,8 @@ const BlogPostView = ({
   blogsArr,
   setBlogsArr
 }) => {
-  const onDelete = (blogsArr, blogIdToDelte) => () => {
-    const copyBlogsArr = blogsArr.filter((post) => post.id !== blogIdToDelte);
+  const onDelete = (blogsArr, blogIdToDelete) => () => {
+    const copyBlogsArr = blogsArr.filter((post) => post.id !== blogIdToDelete);
     setBlogsArr(copyBlogsArr);
   };
   return (

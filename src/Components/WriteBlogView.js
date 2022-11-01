@@ -8,15 +8,15 @@ const WriteBlogView = ({
   blogsArr,
   setBlogsArr
 }) => {
-  const [blogMssg, setBlogMssg] = useState("");
+  const [blogMsg, setBlogMsg] = useState("");
 
   const onPostBlog = (newBlog) => () => {
     const blogValid = validateText(newBlog);
     if (!blogValid) {
-      setBlogMssg("Please enter blog post text.");
+      setBlogMsg("Please enter blog post text.");
       return;
     }
-    setBlogMssg("");
+    setBlogMsg("");
     const blogId = Math.ceil(Math.random() * 10000);
     const newBlogPost = { id: blogId, blog: newBlog };
     const blogsArrCopy = [...blogsArr];
@@ -39,7 +39,7 @@ const WriteBlogView = ({
         <button className="BlogButton" onClick={onPostBlog(newBlog)}>
           Post
         </button>
-        <div className="Mssg">{blogMssg}</div>
+        <div className="Msg">{blogMsg}</div>
       </div>
     </>
   );

@@ -10,8 +10,8 @@ const SignIn = ({
   userName,
   profileImg
 }) => {
-  const [userNameMssg, setUserNameMssg] = useState("");
-  const [profileImgMssg, setProfileImgMssg] = useState("");
+  const [userNameMsg, setUserNameMsg] = useState("");
+  const [profileImgMsg, setProfileImgMsg] = useState("");
   return (
     <React.Fragment>
       <>
@@ -27,25 +27,25 @@ const SignIn = ({
         <button
           className="BlogButton"
           onClick={() => {
-            setUserNameMssg("");
-            setProfileImgMssg("");
+            setUserNameMsg("");
+            setProfileImgMsg("");
             const userNameValid = validateText(userName);
             const photoUrlValid = validateText(profileImg);
             if (userNameValid && photoUrlValid) {
               setShowBlogs(true);
             }
             if (!userNameValid) {
-              setUserNameMssg("Please enter a Username.");
+              setUserNameMsg("Please enter a Username.");
             }
             if (!profileImg) {
-              setProfileImgMssg("Please enter Photo URL.");
+              setProfileImgMsg("Please enter Photo URL.");
             }
           }}
         >
           Sign In
         </button>
-        <div className="Mssg">{userNameMssg}</div>
-        <div className="Mssg">{profileImgMssg}</div>
+        <div className="Msg">{userNameMsg}</div>
+        <div className="Msg">{profileImgMsg}</div>
       </>
     </React.Fragment>
   );
